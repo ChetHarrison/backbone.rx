@@ -1,0 +1,31 @@
+{
+  "name": "backbone.rx",
+  "homepage": "https://github.com/ChetHarrison/backbone.rx",
+  "authors": [
+    "Chet Harrison <chet.harrison@gmail.com>"
+  ],
+  "description": "Reactive-Extentions for Backbone.",
+  "main": "backbone.rx.js",
+  "moduleType": [],
+  "keywords": [
+    "Reactive",
+    "RxJS",
+    "Backbone",
+    "Marionette",
+    "streams",
+    "async",
+    "functional"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.2.3",
+    "rxjs": "~4.0.7"
+  }
+}

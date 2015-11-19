@@ -1,0 +1,24 @@
+git-done todo file for backbone.rx
+git-done https://github.com/staltz/git-done
+
+## Use ## for trailing line comments
+## Use >>> for tags
+
+Only lines with TODO or DONE will be considered as commit
+messages when running 'git done'.
+
+Use git done -p to preview the commit message without
+performing the commit.
+
+Use: Fixed, Removed, Added, Updated, or Refactored.
+
+Commit Message Questions:
+	Why is this necessary?
+	How does this address the issue?
+	What side effects does this introduce?
+	Any external links to reference?
+
+DONE Setup dev env
+TODO Setup test env
+
+>>> v0.0.1
