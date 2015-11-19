@@ -26,6 +26,7 @@
   ],
   "dependencies": {
     "backbone": "~1.2.3",
-    "rxjs": "~4.0.7"
+    "rxjs": "~4.0.7",
+    "almond": "~0.3.1"
   }
 }

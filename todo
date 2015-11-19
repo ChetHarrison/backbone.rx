@@ -18,7 +18,7 @@ Commit Message Questions:
 	What side effects does this introduce?
 	Any external links to reference?
 
-DONE Setup dev env
-TODO Setup test env
+DONE Added dev env
+TODO Added test env
 
 >>> v0.0.1

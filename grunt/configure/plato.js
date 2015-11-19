@@ -12,7 +12,7 @@ module.exports = {
 			// jshint: grunt.file.readJSON(".jshintrc")
 		},
 		files : {
-			'reports/analysis' : [ '<%= dir.es5 %>app/**/*.js' ]
+			'reports/analysis' : [ 'src/es5/backbone.rx.js' ]
 		}
 	}
 };
