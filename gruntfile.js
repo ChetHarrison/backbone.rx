@@ -29,9 +29,11 @@ module.exports = function( grunt ) {
 			obj[ fileBaseName ] = require( gruntConfigurePath +  taskFileName );
 			return obj;
 		}, {} );
-	configuration.dir = require( gruntPath + 'paths.js' );
+	configuration.paths = require( gruntPath + 'paths.js' );
 	configuration.pkg = require( './package.json' );
 	grunt.initConfig( configuration );
+
+	console.log( JSON.stringify( configuration, null, 2 ) );
 
 	// Load tasks but filter the grunt-template-jasmine files
 	require( 'matchdep' )

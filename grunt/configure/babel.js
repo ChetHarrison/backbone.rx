@@ -10,25 +10,16 @@ module.exports = {
 		sourceMap : true,
 		modules : 'amd'
 	},
-	app : {
+	code : {
 		files : [ {
-			expand : true,
-			cwd : '<%= dir.src %>',
-			src : [
-				'**/*.js'
-			],
-
-			// Hack to place app and test transpiles in the
-			// same build dir.
-			dest : '<%= dir.es5 %>'
+			src : '<%= paths.code %>',
+			dest : '<%= paths.codeEs5 %>'
 		} ]
 	},
 	tests : {
 		files : [ {
-			expand : true,
-			cwd : '<%= dir.tests %>',
-			src : [ '**/*-spec.js' ],
-			dest : '<%= dir.es5 %>tests'
+			src : '<%= paths.tests %>',
+			dest : '<%= paths.testsEs5 %>'
 		} ]
 	}
 };

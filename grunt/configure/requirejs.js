@@ -14,14 +14,14 @@ module.exports = {
 
 			// this path is relative to this tasks baseUrl option.
 			name : '../bower_modules/almond/almond',
-			include : [ '../require-config' ],
-			insertRequire : [ '../require-config' ],
+			include : [ '../<%= paths.requireConfig %>' ],
+			insertRequire : [ '../<%= paths.requireConfig %>' ],
 			wrap : true,
 			optimize : 'uglify',
-			out : '<%= dir.dist %>backbone.rx.min.js',
+			out : '<%= paths.dist %>backbone.rx.min.js',
 
 			// This path is relative to the gruntfile.
-			mainConfigFile : 'require-config.js',
+			mainConfigFile : '<%= paths.requireConfig %>'
 		}
 	}
 };

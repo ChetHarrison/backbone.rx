@@ -1,6 +1,6 @@
 import _ from 'underscore';
 import Backbone from 'backbone';
-import Rx from 'rxjs';
+import RxJS from 'rxjs';
 
 var previousRx = Backbone.Rx;
 

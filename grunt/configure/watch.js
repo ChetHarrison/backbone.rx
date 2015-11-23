@@ -1,4 +1,4 @@
-//   Module      : plato.js
+//   Module      : watch.js
 // ----------------------------
 //		Description : configures the grunt task
 //		Copyright   : (c) Nimble Chef Inc. 2015
@@ -6,13 +6,12 @@
 //		Stability   : experimental
 //
 module.exports = {
-	report : {
-		options : {
-
-			// jshint: grunt.file.readJSON(".jshintrc")
-		},
-		files : {
-			'reports/analysis' : [ 'src/es5/backbone.rx.js' ]
-		}
+	js : {
+		files : [
+			'<%= paths.code %>',
+			'<%= paths.tests %>',
+			'<%= paths.requireConfig %>'
+		],
+		tasks : [ 'test' ]
 	}
 };

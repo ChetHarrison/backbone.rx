@@ -5,28 +5,26 @@
 //		Maintainer  : chet.harrison@nimblechef.com
 //		Stability   : experimental
 //
-
-// NOTE: THIS FILE MUST BE IN ES5!
 requirejs.config( {
-	'baseUrl': '',
+	baseUrl: '',
 
-	'shim': {
+	shim: {
 		'underscore' : {
 			'exports' : '_'
 		},
 		'backbone' : {
-			'deps' : [
-			'underscore'
-			],
+			'deps' : [ 'underscore' ],
 			'exports' : 'Backbone'
 		}
 	},
 
-	'paths': {
-		'backbone.rx' : 'dev/es5/backbone.rx',
+	paths: {
+		'backbone.rx' : 'src/es5/backbone.rx',
 
-		'backbone'    : '../bower_components/backbone/backbone'
-		'underscore'  : '../bower_components/underscore/underscore',
-		'rx'          : '../bower_components/rxjs/dist/rx.all'
+		'backbone'    : 'bower_components/backbone/backbone',
+		'underscore'  : 'bower_components/underscore/underscore',
+		'rx'          : 'bower_components/rxjs/dist/rx.all'
 	}
 } );
+
+requirejs( [ 'backbone.rx' ], function() { } );

@@ -5,17 +5,13 @@
 //		Maintainer  : chet.harrison@nimblechef.com
 //		Stability   : experimental
 //
-var testPaths = {
-	'jasmine-jquery' : '../node_modules/jasmine-jquery/lib/jasmine-jquery',
-	'fixtures' 		 : 'es5/tests/fixtures',
-	'sinon'			 : '../node_modules/sinon/lib/sinon'
-}
-
 module.exports = {
+
 	options : {
-		specs : 'dev/es5/tests/**/*-spec.js',
+		src : '<%= paths.codeEs5 %>',
+		specs : '<%= paths.testsEs5 %>',
 		keepRunner : true,
-		outfile : 'spec-runner.html'
+		outfile : '<%= paths.specRunner %>'
 	},
 
 	phantom: {
@@ -23,17 +19,7 @@ module.exports = {
 			display : 'full', // short or none
 			template : require( 'grunt-template-jasmine-requirejs' ),
 			templateOptions : {
-				requireConfigFile : 'dev/require-config.js',
-				requireConfig : {
-					baseUrl : 'dev',
-					shim : {
-						'jasmine-jquery' : {
-							deps : [ 'jquery' ],
-							exports : 'jasmine-jquery'
-						}
-					},
-					paths : testPaths
-				}
+				requireConfigFile : '<%= paths.requireConfig %>'
 			}
 		}
 	},
@@ -41,30 +27,30 @@ module.exports = {
 	coverage : {
 
 		// relative to the gruntfile.
-		src : [ 'dev/es5/app/**/*.js' ],
+		src : [ '<%= paths.codeEs5 %>' ],
 		options : {
 			template : require( 'grunt-template-jasmine-istanbul' ),
 			templateOptions : {
-				coverage : 'reports/coverage/coverage.json',
+				coverage : '<%= paths.coverage %>coverage.json',
 				report : [ {
 						type : 'html',
 						options : {
-							dir : 'reports/coverage/html'
+							dir : '<%= paths.coverage %>html'
 						}
 					}, {
 						type : 'lcov',
 						options : {
-							dir : 'reports/coverage/lcov'
+							dir : '<%= paths.coverage %>lcov'
 						}
 					}, {
 						type : 'text',
 						options : {
-							dir : 'reports/coverage/text'
+							dir : '<%= paths.coverage %>text'
 						}
 					}, {
 						type : 'text-summary',
 						options : {
-							dir : 'reports/coverage/text-summary'
+							dir : '<%= paths.coverage %>text-summary'
 						}
 					} ],
 				thresholds : {
@@ -73,22 +59,10 @@ module.exports = {
 					branches : 50,
 					functions : 50
 				},
-
-				// 1. don't replace src for the mixed-in template with instrumented sources
 				replace : true,
 				template : require( 'grunt-template-jasmine-requirejs' ),
 				templateOptions : {
-					requireConfigFile : 'dev/require-config.js',
-					requireConfig : {
-						baseUrl : 'dev',
-						shim : {
-							'jasmine-jquery' : {
-								deps : [ 'jquery' ],
-								exports : 'jasmine-jquery'
-							}
-						},
-						paths : testPaths
-					}
+					requireConfigFile : '<%= paths.requireConfig %>',
 				}
 			}
 		}

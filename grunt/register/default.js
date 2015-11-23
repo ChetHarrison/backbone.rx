@@ -9,6 +9,6 @@ module.exports = function( grunt ) {
 	grunt.registerTask(
 		'default',
 		'Watch files and run tests',
-		[ 'watch' ]
+		[ 'jasmine:phantom' ]
 	);
 };
