@@ -10,6 +10,6 @@ module.exports = function( grunt ) {
 	grunt.registerTask(
 		'test',
 		'Transpile tests to es5 with Babel and run suite.',
-		[ 'babel:code', 'babel:tests', 'jasmine:phantom' ]
+		[ 'babel:code', 'babel:tests', 'template', 'jasmine:phantom' ]
 	);
 };

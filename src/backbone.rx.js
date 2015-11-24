@@ -1,3 +1,13 @@
+//   Module      : backbone.rx.js
+// ----------------------------
+//		Description : RxJS for Backbone
+//		Copyright   : (c) Nimble Chef Inc. 2015
+//		Maintainer  : chet.harrison@nimblechef.com
+//		Stability   : experimental
+// Backbone.Rx makes Backbone's Events available as [RxJS](https://github.com/Reactive-Extensions/RxJS)
+// Observables.
+//
+
 import _ from 'underscore';
 import Backbone from 'backbone';
 import RxJS from 'rx';

@@ -14,6 +14,7 @@
 var gruntPath = './grunt/',
 	gruntConfigurePath = gruntPath + 'configure/',
 	gruntRegisterPath = gruntPath + 'register/',
+	gruntTasksPath = gruntPath + 'tasks/',
 	fs = require( 'fs' ),
 	path = require( 'path' );
 
@@ -33,7 +34,8 @@ module.exports = function( grunt ) {
 	configuration.pkg = require( './package.json' );
 	grunt.initConfig( configuration );
 
-	console.log( JSON.stringify( configuration, null, 2 ) );
+	// Load custom tasks
+	grunt.task.loadTasks( gruntTasksPath );
 
 	// Load tasks but filter the grunt-template-jasmine files
 	require( 'matchdep' )

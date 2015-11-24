@@ -15,6 +15,7 @@ module.exports = function( grunt ) {
 		[
 			'babel:app',
 			'babel:tests',
+			'template',
 			'jasmine:phantom',
 			'requirejs',
 			'jasmine:coverage'

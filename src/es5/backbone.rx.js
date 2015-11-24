@@ -3,6 +3,16 @@ define(["exports", "module", "underscore", "backbone", "rx"], function (exports,
 
 	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
+	//   Module      : backbone.rx.js
+	// ----------------------------
+	//		Description : RxJS for Backbone
+	//		Copyright   : (c) Nimble Chef Inc. 2015
+	//		Maintainer  : chet.harrison@nimblechef.com
+	//		Stability   : experimental
+	// Backbone.Rx makes Backbone's Events available as [RxJS](https://github.com/Reactive-Extensions/RxJS)
+	// Observables.
+	//
+
 	var _ = _interopRequire(_underscore);
 
 	var Backbone = _interopRequire(_backbone);
@@ -13,7 +23,7 @@ define(["exports", "module", "underscore", "backbone", "rx"], function (exports,
 
 	var Rx = Backbone.Rx = {};
 
-	Rx.VERSION = "<%= version %>";
+	Rx.VERSION = "0.0.0";
 
 	// This allows you to run multiple instances of Rx on the same
 	// webapp. After loading the new version, call `noConflict()` to
