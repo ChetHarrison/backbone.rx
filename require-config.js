@@ -21,6 +21,7 @@ requirejs.config( {
 	paths: {
 		'backbone.rx' : 'src/es5/backbone.rx',
 
+		'jquery'      : 'bower_components/jquery/dist/jquery',
 		'backbone'    : 'bower_components/backbone/backbone',
 		'underscore'  : 'bower_components/underscore/underscore',
 		'rx'          : 'bower_components/rxjs/dist/rx.all'

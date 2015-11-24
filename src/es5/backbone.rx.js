@@ -1,4 +1,4 @@
-define(["exports", "module", "underscore", "backbone", "rxjs"], function (exports, module, _underscore, _backbone, _rxjs) {
+define(["exports", "module", "underscore", "backbone", "rx"], function (exports, module, _underscore, _backbone, _rx) {
 	"use strict";
 
 	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
@@ -7,7 +7,7 @@ define(["exports", "module", "underscore", "backbone", "rxjs"], function (export
 
 	var Backbone = _interopRequire(_backbone);
 
-	var RxJS = _interopRequire(_rxjs);
+	var RxJS = _interopRequire(_rx);
 
 	var previousRx = Backbone.Rx;
 
