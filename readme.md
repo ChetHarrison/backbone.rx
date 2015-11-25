@@ -3,7 +3,8 @@ Backbone.Rx
 [![Code Climate](https://codeclimate.com/github/ChetHarrison/backbone.rx/badges/gpa.svg)](https://codeclimate.com/github/ChetHarrison/backbone.rx)
 
 Backbone.Rx adds [RxJS](https://github.com/Reactive-Extensions/RxJS) message streams to
-Backbone. This is essentially modified of [Backbone.Radio](https://github.com/marionettejs/backbone.radio/blob/master/src/backbone.radio.js)
+Backbone. This is essentially slightly modified version of
+[Backbone.Radio](https://github.com/marionettejs/backbone.radio/blob/master/src/backbone.radio.js)
 which is based on Backbone.Events.
 
 I may change the project to Backbone.Radio.Active so it can be a drop in replacement
