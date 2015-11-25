@@ -16,6 +16,7 @@ Usage with Marionette
 I will make available via npm and bower next week. I need to put in a build
 step but currently transpiles to ES5 via Babel wrapped in an un-optimized AMD
 bundle that should work the Backbone.Radio [UMD shim](https://gist.github.com/jmeas/7992474cdb1c5672d88b).
+This file can be found under `src/es5/backbone.rx.js`.
 
 `Marionette` and `Backbone.Radio` use `Backbone.Events` to implement their event based
 message patterns. Rx `Observable`s have a `fromEvent` method that take an

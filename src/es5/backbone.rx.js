@@ -23,7 +23,7 @@ define(["exports", "module", "underscore", "backbone", "rx"], function (exports,
 
 	var Rx = Backbone.Rx = {};
 
-	Rx.VERSION = "0.0.0";
+	Rx.VERSION = "0.0.1";
 
 	// This allows you to run multiple instances of Rx on the same
 	// webapp. After loading the new version, call `noConflict()` to
