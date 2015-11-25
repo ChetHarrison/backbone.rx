@@ -7,9 +7,45 @@
 //
 import BackboneRx from 'backbone.rx';
 import Backbone from 'backbone';
+import _ from 'underscore';
 
 describe( 'backbone.rx', function() {
 	'use strict';
+
+	it( 'should listen to events', function() {
+		var model = new Backbone.Model();
+		var chan = Backbone.Rx.channel( 'global' );
+		var eventable = _.extend( {}, Backbone.Events );
+		var modelDestroyStream = chan.Observable.fromEvent( model, 'destroy' );
+		var modelEventstream = chan.Observable.fromEvent( model, 'all' )
+			.takeUntil( modelDestroyStream );
+
+		modelEventstream.subscribe(
+			e => console.log( 'modelEventstream fired: ', e ),
+			err => console.log( err ),
+			() => console.log( 'modelEventstream done' )
+		);
+
+		var anotherStream = BackboneRx.Observable.fromEvent( model, 'change' )
+			.takeUntil( modelDestroyStream );
+
+		anotherStream.subscribe(
+			e => console.log( 'anotherStream fired: ', e ),
+			err => console.log( err ),
+			() => console.log( 'anotherStream done' )
+		);
+
+		model.trigger( 'bar' );
+		model.set( { title: 'foo' } );
+		model.set( 'title', 'baz' );
+
+		_.extend( model, Backbone.Rx.Requests );
+		model.reply( 'test', { test : 'test' } );
+		model.request( 'test' );
+
+		model.destroy();
+
+	} );
 
 	describe( 'When Rx is attached to your application', function() {
 		it( 'should attach itself to Backbone.Rx', function() {

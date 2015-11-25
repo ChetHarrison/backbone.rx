@@ -49,6 +49,10 @@ Rx.debugLog = function( warning, eventName, channelName ) {
 
 var eventSplitter = /\s+/;
 
+var json = {
+	log : obj => console.log( JSON.stringify( obj, null, 2 ) )
+}
+
 // An internal method used to handle Rx's method overloading for Requests.
 // It's borrowed from Backbone.Events. It differs from Backbone's overload
 // API (which is used in Backbone.Events) in that it doesn't support space-separated
@@ -57,6 +61,11 @@ Rx._eventsApi = function( obj, action, name, rest ) {
 	if ( !name ) {
 		return false;
 	}
+
+	json.log( obj );
+	json.log( action );
+	json.log( name );
+	json.log( rest );
 
 	var results = {};
 
@@ -176,6 +185,15 @@ _.extend( Rx, {
 		return this;
 	}
 } );
+
+/*
+ * Backbone.Rx.Observable
+ * -----------------------
+ * A messaging system for streaming data.
+ *
+ */
+
+_.extend( Rx, RxJS );
 
 /*
  * Backbone.Rx.Requests
@@ -303,7 +321,7 @@ Rx.Channel = function( channelName ) {
 	this.channelName = channelName;
 };
 
-_.extend( Rx.Channel.prototype, Backbone.Events, Rx.Requests, {
+_.extend( Rx.Channel.prototype, Backbone.Events, Rx.Requests, RxJS, {
 
 	// Remove all handlers from the messaging systems of this channel
 	reset: function() {
